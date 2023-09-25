@@ -36,3 +36,4 @@ jobs:
 
       - name: Build and push with Jib using multiple tags
         run: ./gradlew jib -Djib.to.image=${{ secrets.DOCKERHUB_USERNAME }}/fosslight -Djib.to.tags=latest,8.0
+        
