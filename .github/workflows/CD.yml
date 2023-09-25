@@ -34,5 +34,8 @@ jobs:
         with:
           arguments: build
 
+      - name: docker login
+        run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
+
       - name: Build and push with Jib using multiple tags
         run: ./gradlew jib -Djib.to.image=${{ secrets.DOCKERHUB_USERNAME }}/fosslight -Djib.to.tags=latest,8.0
