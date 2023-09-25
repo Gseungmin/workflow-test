@@ -9,6 +9,16 @@ jar {
 	enabled = false
 }
 
+jib {
+	from {
+		image = 'openjdk:17'
+	}
+	container {
+		args = ["java", "-jar", "/app.jar", '--server.port=8080']
+		ports = ['8080']
+	}
+}
+
 group = 'com.example'
 version = '0.0.1-SNAPSHOT'
 
